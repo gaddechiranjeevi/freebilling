@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import BillApp from "./Mybilling/BillingApp";
+import UserApp from "./User/Component/UserApp";
+import "./App.css";
+
+// user details
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  if(localStorage.getItem("Key") == null){
+    return (
+      <div>
+    
+         <UserApp/>
+      </div>
+    );
+    }else{
+      return (
+        <div>
+          
+           <BillApp/>
+        </div>
+      );
+    }
 }
 
 export default App;
